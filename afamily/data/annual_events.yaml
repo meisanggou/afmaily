@@ -1,0 +1,27 @@
+annual_events:
+  - year_title: 2020年
+    events:
+    - event_date: 12月16日
+      event_title: 领
+      event_desc:
+        - 金水区
+  - year_title: 2021年
+    events:
+    - event_date: 5月2日
+      event_title: 订
+      event_desc:
+        - 永城
+  - year_title: 2021年
+    events:
+    - event_date: 4月30日
+      important: True
+      event_title: 照
+      event_desc:
+        - 郑州
+  - year_title: 2022年
+    events:
+    - event_date: 4月30日
+      important: True
+      event_title: 结
+      event_desc:
+        - 永城

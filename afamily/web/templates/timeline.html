@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7" lang="zh"><![endif]-->
+<!--[if gt IE 7]><!-->
+<html lang="zh">
+<!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的家庭</title>
+<link href="/static/css/timeline.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="content">
+  <div class="wrapper">
+    <div class="light"><i></i></div>
+    <hr class="line-left">
+    <hr class="line-right">
+    <div class="main">
+      <h1 class="year-title">时间轴</h1>
+      {% for year_item in annual_events%}
+      <div class="year">
+        <h2><a href="#">{{ year_item.year_title }}<i></i></a></h2>
+        <div class="list">
+          <ul>
+            {% for event_item in year_item.events %}
+            {% if event_item.important %}
+            <li class="cls important">
+            {% else %}
+            <li class="cls">
+            {% endif %}
+              <p class="date">{{ event_item.event_date }}</p>
+              <p class="intro">{{ event_item.event_title }}</p>
+              <p class="version">&nbsp;</p>
+              <div class="more">
+                {% for event_desc in  event_item.event_desc %}
+                <p>{{ event_desc }}</p>
+                {% endfor %}
+                <p> <a href="/photo?name=1"> 查看相册 </a> </p>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="footer">
+</div>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+	$(".main .year .list").each(function (e, target) {
+	    var $target=  $(target),
+	        $ul = $target.find("ul");
+	    $target.height($ul.outerHeight()), $ul.css("position", "absolute");
+	}); 
+	$(".main .year>h2>a").click(function (e) {
+	    e.preventDefault();
+	    $(this).parents(".year").toggleClass("close");
+	});
+	</script>
+</body>
+</html>
