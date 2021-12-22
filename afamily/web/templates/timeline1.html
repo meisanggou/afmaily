@@ -35,7 +35,9 @@
                 {% for event_desc in  event_item.event_desc %}
                 <p>{{ event_desc }}</p>
                 {% endfor %}
-                <p> <a href="/photo?name=1"> 查看相册 </a> </p>
+                {% if event_item['photo'] %}
+                <p> <a href="/photo?name={{ event_item['photo'] }}"> 查看相册 </a> </p>
+                {% endif %}
               </div>
             </li>
             {% endfor %}

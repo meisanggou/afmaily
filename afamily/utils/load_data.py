@@ -39,6 +39,12 @@ def load_file(name, reload=False):
         return _loader(c)
 
 
+@cache
+def list_files(dir_name):
+    items = os.listdir(dir_name)
+    return items
+
+
 if __name__ == '__main__':
     o = load_file('annual_events.yaml')
     print(o)

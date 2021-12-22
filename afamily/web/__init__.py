@@ -9,10 +9,12 @@ from werkzeug.exceptions import HTTPException
 from flask import request, g, redirect, make_response, jsonify
 from flask_login import current_user, LoginManager
 from flask_login import UserMixin
+from flask_helper import Flask2
 from flask_helper.utils.log import getLogger
 from flask_login.utils import login_url as make_login_url
-from flask_helper import Flask2
+from flask_helper.utils.registry import DataRegistry
 
+from afamily.utils import contansts
 
 
 __author__ = 'zhouheng'
@@ -63,6 +65,10 @@ def create_app():
         LOG.exception(e)
         return jsonify({'status': False, 'data': 'Internal error'})
 
+    for rule, v in DataRegistry.get_instance().get(contansts.KEY_STATIC_RE, []):
+        rule += '/<path:filename>'
+        one_web.add_url_rule(rule, view_func=one_web.send_static_file2,
+                             defaults=dict(static_folder=v))
     # one_web.add_url_rule("/static00" + '/<path:filename>', endpoint='static00', view_func=one_web.send_static_file2,
     #                      defaults=dict(static_folder=os.path.join(os.path.split(os.path.dirname(__file__))[0], "static")))
     # one_web.static_folder = "static"

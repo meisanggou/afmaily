@@ -1,0 +1,33 @@
+.bg-light-slate-gray{ background-color: #778899; }
+.bg-green{ background-color: #008000; }
+.bg-gainsboro { background-color: #DCDCDC; }
+.bg-gold { background-color: #FFD700; }
+.bg-fuchsia { background-color: #FF00FF }
+
+/*克莱因蓝 银色
+ 中国红 千岁绿
+ 莫兰迪色 淡粉
+ 马尔斯绿 墨绿
+ 普鲁士蓝 浅咖色
+ 拿坡里黄 中灰
+ 爱马仕橙 深空灰
+*/
+.bg-klein { background-color: #002EA6; }
+.bg-silver { background-color: #C0C0C0; }
+
+.bg-red { background-color: #D7000F; }
+.bg-green { background-color: #3C5842; }
+
+.bg-mld { background-color: #798B71; }
+.bg-pink { background-color: #FBE8D9; }
+
+.bg-mes { background-color: #01847F; }
+.bg-darkslategray { background-color: #00544D; }
+
+.bg-pls { background-color: #013E77; }
+.bg-light-coffee { background-color: #F9CF9F; }
+
+.bg-npl { background-color: #FCDA5E; }
+.bg-midnight { background-color: #817F80; }
+.bg-ams { background-color: #FF770F; }
+.bg-deep-grey { background-color: #333333; }

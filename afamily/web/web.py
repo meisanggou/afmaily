@@ -4,7 +4,7 @@
 import os
 import sys
 from flask_helper.utils import log
-from flask_helper.utils.registry import DataRegistry
+
 
 from afamily.web import app
 

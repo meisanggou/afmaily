@@ -1,0 +1,19 @@
+default:
+  album1:
+    location: d:/demo
+    num: 10
+  album2:
+    location: d:/demo
+  album3:
+    location: d:/demo
+    num: 10
+  album4:
+    location: d:/demo
+    num: 15
+online:
+  album1:
+    location: /opt/data/album/1216
+  album2:
+    location: /opt/data/album/0502
+  album3:
+    location: /opt/data/album/0911

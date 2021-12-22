@@ -1,27 +1,49 @@
 annual_events:
+  - year_title: 2012年
+    events:
+    - event_date: 10月9日
+      event_title: 相遇
+      event_desc:
+        - 河南大学
+        - 善良与热爱使我们相遇
+      bg_color1: bg-klein
+      bg_color2: bg-silver
+      album_cover: /static/images/meet.jpeg
   - year_title: 2020年
     events:
     - event_date: 12月16日
-      event_title: 领
+      event_title: 领证
       event_desc:
         - 金水区
+      photo: album1
+      bg_color1: bg-red
+      bg_color2: bg-green
   - year_title: 2021年
     events:
     - event_date: 5月2日
-      event_title: 订
+      event_title: 订婚
       event_desc:
         - 永城
+      photo: album2
+      bg_color1: bg-mld
+      bg_color2: bg-pink
   - year_title: 2021年
     events:
-    - event_date: 4月30日
-      important: True
-      event_title: 照
+    - event_date: 9月11日
+      important: False
+      event_title: 拍婚纱照
       event_desc:
         - 郑州
+      photo: album3
+      bg_color1: bg-mes
+      bg_color2: bg-darkslategray
   - year_title: 2022年
     events:
     - event_date: 4月30日
       important: True
-      event_title: 结
+      event_title: 结婚
       event_desc:
         - 永城
+      bg_color1: bg-pls
+      bg_color2: bg-light-coffee
+      album_cover: /static/images/marry.jpg
