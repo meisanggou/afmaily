@@ -14,10 +14,11 @@ __author__ = 'zhouhenglc'
 index_view = View('index_view', __name__)
 rt = RenderTemplate()
 PHOTOS = helper.register_photos()
-
+print(PHOTOS)
 
 @index_view.route('/')
 def index():
+
     version = int(request.args.get('version', 2))
     if version not in (1, 2):
         version = 1
