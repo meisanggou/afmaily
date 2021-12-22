@@ -1,19 +1,25 @@
 default:
   album1:
+    title: 领证
     location: d:/demo
     num: 10
   album2:
+    title: 订婚
     location: d:/demo
   album3:
     location: d:/demo
     num: 10
+    title: 拍婚纱照
   album4:
     location: d:/demo
     num: 15
 online:
   album1:
+    title: 领证
     location: /opt/data/album/1216
   album2:
+    title: 订婚
     location: /opt/data/album/0502
   album3:
+    title: 拍婚纱照
     location: /opt/data/album/0911

@@ -60,8 +60,9 @@
                                 {% for event_desc in  event_item.event_desc %}
                                     <p class="mb-4">{{ event_desc }}</p>
                                 {% endfor %}
-
+                                {% if 'photo' in event_item %}
                                 <a href="/photo?name={{ event_item['photo'] }}" class="btn btn-primary tm-button-rounded {{ event_item.bg_color2 }} tm-button-no-border tm-button-normal tm-button-timeline">查看相册</a>
+                                {% endif %}
                             </div>
                           </div>
                         </div>

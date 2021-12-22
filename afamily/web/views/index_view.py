@@ -43,5 +43,6 @@ def photo():
     if name not in PHOTOS:
         name = 'album2'
     url_items = PHOTOS[name]['urls']
+    title = PHOTOS[name]['title']
     template = '%s.html' % mapping.get(name, 'photo2')
-    return rt.render(template, img_items=url_items)
+    return rt.render(template, img_items=url_items, title=title)
