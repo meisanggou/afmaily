@@ -36,7 +36,7 @@ def register_photos():
 
         urls = []
         for item in z_items:
-            _u_item = ['%s/%s' % (url, item)]
+            _u_item = [item, '%s/%s' % (url, item)]
             for z_url in z_urls:
                 _u_item.append('%s/%s' % (z_url, item))
             urls.append(_u_item)

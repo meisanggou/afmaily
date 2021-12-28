@@ -122,33 +122,7 @@ body {
 .tm-button-normal:focus { outline: none; }
 
 .tm-button-rounded { border-radius: 8px; padding-top: 12px; padding-bottom: 12px; }
-.tm-button-orange { background-color: #CC6733; }
-.tm-button-orange:hover,
-.tm-button-orange:focus { background-color: #e68d5f; }
 
-.tm-button-pink { background-color: #CC6698; }
-.tm-button-pink:focus,
-.tm-button-pink:hover { background-color: #ff84c0; }
-.tm-button-green { background-color: #349999; }
-.tm-button-green:focus,
-.tm-button-green:hover { background-color: #43c7c7; }
-
-.tm-button-red { background-color: #CB6666; }
-.tm-button-red:focus,
-.tm-button-red:hover { background-color: #f37373; }
-
-.tm-button-no-border { border: none; }
-.tm-button-gray { 
-	background-color: #666666;
-	color: white;
-	border: none;
-	padding: 12px 40px;
-}
-.tm-button-gray:hover {
-	background-color: #999898;
-	border: none;
-	color: white;
-}
 
 .tm-button-timeline { padding-left: 35px; padding-right: 35px; }
 .tm-timeline-item-title { font-size: 1.8rem; }

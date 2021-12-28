@@ -7,85 +7,59 @@
     <title>家庭大事记</title>
 
     <!-- load stylesheets -->
-    <link rel="stylesheet" href="/static/resource/css/family.css">   <!-- Google web font "Open Sans", https://fonts.google.com/ -->
-    <link rel="stylesheet" href="/static/resource/font-awesome-4.7.0/css/font-awesome.min.css">           <!-- Font Awesome, http://fontawesome.io/ -->
-    <link rel="stylesheet" href="/static/resource/css/bootstrap.min.css">                                 <!-- Bootstrap styles, https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/static/resource/css/family.css">
+    <!-- Google web font "Open Sans", https://fonts.google.com/ -->
+    <link rel="stylesheet" href="/static/resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome, http://fontawesome.io/ -->
+    <link rel="stylesheet" href="/static/resource/css/bootstrap.min.css">
+    <!-- Bootstrap styles, https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/static/resource/css/tooplate-style.css">
     <link rel="stylesheet" href="/static/css/timeline2.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="/static/resource/js/html5shiv.min.js"></script>
-          <script src="/static/resource/js/respond.min.js"></script>
-          <![endif]-->
-      </head>
 
-      <body>
-        <div class="container-fluid">
-            <div class="tm-body">
-{#                <div class="tm-sidebar sticky">#}
-{#                    <section id="welcome" class="tm-content-box tm-banner margin-b-15">#}
-{#                        <div class="tm-banner-inner">#}
-{#                            <i class="fa fa-film fa-4x margin-b-40"></i>#}
-{#                            <h1 class="tm-banner-title">Mason</h1>#}
-{#                            <p class="tm-banner-subtitle">new HTML template</p>                   #}
-{#                        </div>                    #}
-{#                    </section>#}
-{#                    <nav class="tm-main-nav">#}
-{#                        <ul class="tm-main-nav-ul">#}
-{#                            <li class="tm-nav-item"><a href="/photo2" class="tm-nav-item-link tm-button">Gallery</a>#}
-{#                            </li>#}
-{#                            <li class="tm-nav-item"><a href="timeline.html" class="tm-nav-item-link tm-button active">Timeline</a>#}
-{#                            </li>#}
-{#                            <li class="tm-nav-item"><a href="about.html" class="tm-nav-item-link tm-button">About</a>#}
-{#                            </li>#}
-{#                            <li class="tm-nav-item"><a href="contact.html" class="tm-nav-item-link tm-button">Contact</a>#}
-{#                            </li>#}
-{#                        </ul>#}
-{#                    </nav>#}
-{#                </div>#}
-                <div class="tm-main-content">
-                    {% for year_item in annual_events%}
-                    {% for event_item in year_item.events %}
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="tm-body">
+        <div class="tm-main-content">
+            {% for year_item in annual_events %}
+                {% for event_item in year_item.events %}
                     <div class="row mb-5">
                         <div class="media tm-flexbox-ie-fix tm-width-ie-fix">
                             <div class="tm-media-img-container">
-                                <div class="text-center pt-31 pb-31 tm-timeline-date {{ event_item.bg_color1 }}">{{ event_index }}{{ year_item.year_title }}{{ event_item.event_date }}</div>
-                                <img class="d-flex img-fluid" src="{{ event_item.album_cover }}" alt="Generic placeholder image">
+                                <div class="text-center pt-31 pb-31 tm-timeline-date {{ event_item.bg_color1 }}">
+                                    {{ year_item.year_title }}{{ event_item.event_date }}</div>
+                                <img class="d-flex img-fluid" src="{{ event_item.album_cover }}" alt="">
                             </div>
 
-                          <div class="media-body tm-flexbox-ie-fix tm-width-ie-fix bg-gainsboro">
-                            <div class="p-5">
-                                <h2 class="mb-4 mt-0 tm-blue-text tm-timeline-item-title">{{ event_item.event_title }}</h2>
-                                {% for event_desc in  event_item.event_desc %}
-                                    <p class="mb-4">{{ event_desc }}</p>
-                                {% endfor %}
-                                {% if 'photo' in event_item %}
-                                <a href="/photo?name={{ event_item['photo'] }}" class="btn btn-primary tm-button-rounded {{ event_item.bg_color2 }} tm-button-no-border tm-button-normal tm-button-timeline">查看相册</a>
-                                {% endif %}
+                            <div class="media-body tm-flexbox-ie-fix tm-width-ie-fix bg-gainsboro">
+                                <div class="p-5">
+                                    <h2 class="mb-4 mt-0 tm-blue-text tm-timeline-item-title">{{ event_item.event_title }}</h2>
+                                    {% for event_desc in  event_item.event_desc %}
+                                        <p class="mb-4">{{ event_desc }}</p>
+                                    {% endfor %}
+                                    {% if 'photo' in event_item %}
+                                        <a href="/photo?name={{ event_item['photo'] }}"
+                                           class="btn btn-primary tm-button-rounded {{ event_item.bg_color2 }} tm-button-no-border tm-button-normal tm-button-timeline">查看相册</a>
+                                    {% endif %}
+                                </div>
                             </div>
-                          </div>
                         </div>
                     </div> <!-- row -->
-                    {% endfor %}
-                    {% endfor %}
-                </div>
-            </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 
-            <footer class="tm-footer text-right">
-                <p><a href="https://beian.miit.gov.cn">豫ICP备2021037184号</a></p>
-            </footer>
-        </div> <!-- container-fluid -->
-        
-        <!-- load JS files -->        
-        <script src="/static/resource/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
-        <script>  
-    
-        $(document).ready(function(){
-            // Update the current year in copyright
-            $('.tm-current-year').text(new Date().getFullYear());        
-        });
-    
-        </script>
-    </body>
-    </html>
+    <footer class="tm-footer text-center">
+        <p><a href="http://lovemmz.cn">lovemmz.cn</a> 周恒<img class="img-min" src="/static/images/xin.jpg">马铭章 <a
+                href="https://beian.miit.gov.cn">豫ICP备2021037184号</a></p>
+    </footer>
+</div>
+<!-- container-fluid -->
+
+<!-- load JS files -->
+<script src="/static/resource/js/jquery-1.11.3.min.js"></script>
+<!-- jQuery (https://jquery.com/download/) -->
+</body>
+</html>

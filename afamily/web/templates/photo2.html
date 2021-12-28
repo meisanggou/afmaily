@@ -7,78 +7,89 @@
     <title>{{ title }}</title>
 
     <!-- load stylesheets -->
-    <link rel="stylesheet" href="/static/resource/css/family.css">   <!-- Google web font "Open Sans", https://fonts.google.com/ -->
-    <link rel="stylesheet" href="/static/resource/font-awesome-4.7.0/css/font-awesome.min.css">           <!-- Font Awesome, http://fontawesome.io/ -->
-    <link rel="stylesheet" href="/static/resource/css/bootstrap.min.css">                                 <!-- Bootstrap styles, https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/static/resource/css/family.css">
+    <!-- Google web font "Open Sans", https://fonts.google.com/ -->
+    <link rel="stylesheet" href="/static/resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome, http://fontawesome.io/ -->
+    <link rel="stylesheet" href="/static/resource/css/bootstrap.min.css">
+    <!-- Bootstrap styles, https://getbootstrap.com/ -->
     <link rel="stylesheet" href="/static/resource/css/tooplate-style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/default.css">
     {% if not g.wx_browser %}
         <link rel="stylesheet" href="/static/css/swipebox.css">
     {% endif %}
+    <link rel="stylesheet" type="text/css" href="/static/css/photo2.css">
+</head>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="/static/resource/js/html5shiv.min.js"></script>
-          <script src="/static/resource/js/respond.min.js"></script>
-          <![endif]-->
-      </head>
+<body>
+<div class="container-fluid">
+    <div class="tm-body">
+        <div class="tm-sidebar sticky">
+            <section id="welcome" class="tm-content-box tm-banner margin-b-15">
+                <div class="tm-banner-inner">
+                    {#                            <i class="fa fa-film fa-4x margin-b-40"></i>#}
+                    <h1 class="tm-banner-title">{{ title }}</h1>
 
-      <body>
-        <div class="container-fluid">
-            <div class="tm-body">
-                <div class="tm-sidebar sticky">
-                    <section id="welcome" class="tm-content-box tm-banner margin-b-15">
-                        <div class="tm-banner-inner">
-                            <i class="fa fa-film fa-4x margin-b-40"></i>
-                            <h1 class="tm-banner-title">{{ title }}</h1>
-                            <p class="tm-banner-subtitle">--</p>
-                        </div>                    
-                    </section>
-                    <nav class="tm-main-nav">
-                        <ul class="tm-main-nav-ul">
-                            <li class="tm-nav-item"><a href="/" class="tm-nav-item-link tm-button">首页</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <p class="tm-banner-subtitle">--</p>
                 </div>
-                <div class="tm-main-content tm-gallery-container">                    
-                    <div class="grid">
-                        {% for item in img_items %}
-                            <div class="grid-item photo-item" data-href="{{ item[2] }}">
-                                <div href="{{ item[2] }}" class="swipebox">
-                                    <img src="{{ item[1] }}" alt="image" >
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>                    
-                </div> <!-- tm-main-content -->
+            </section>
+            {#                    <nav class="tm-main-nav">#}
+            {#                        <ul class="tm-main-nav-ul">#}
+            {#                            <li class="tm-nav-item"><a href="/" class="tm-nav-item-link tm-button">首页</a>#}
+            {#                            </li>#}
+            {#                        </ul>#}
+            {#                    </nav>#}
+        </div>
+        <div class="tm-main-content tm-gallery-container">
+            <div class="grid">
+                {% for item in img_items %}
+                    <div class="grid-item photo-item star-target" data-href="{{ item[3] }}">
+                        <div href="{{ item[3] }}" class="swipebox">
+                            <img src="{{ item[2] }}" alt="image">
+                        </div>
+
+                        <div class="star-parent" data-name="{{ item[0] }}" data-album="{{ album_name }}" data-star="yes">
+                            <img src="/static/images/star.png">
+                        </div>
+                        <div class="star-parent" data-name="{{ item[0] }}" data-album="{{ album_name }}" data-star="no">
+                            <img src="/static/images/red_star.png">
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
+        </div>
+        <!-- tm-main-content -->
+    </div>
 
-            <footer class="tm-footer text-right">
-                <p>Copyright</p>
-            </footer> 
+    <footer class="tm-footer text-right">
 
-        </div> <!-- container-fluid -->
-        
-        <!-- load JS files -->
-        
-        <script src="/static/resource/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
-        <script src="/static/resource/js/imagesloaded.pkgd.min.js"></script> <!-- https://masonry.desandro.com/ -->
-        <script src="/static/resource/js/masonry.pkgd.min.js"></script> <!-- https://masonry.desandro.com/ -->
-        <script src="/static/js/ios-orientationchange-fix.js"></script>
-        <script src="/static/js/photo2.js"></script>
-        {% if g.wx_browser %}
-            <script src="/static/js/photo2.wx.js"></script>
-        {% else %}
-            <script src="/static/js/jquery.swipebox.js"></script>
-            <script src="/static/js/photo2.win.js"></script>
-        {% endif %}
-        <!-- Templatemo scripts -->
-        <script>  
+    </footer>
+
+</div>
+<!-- container-fluid -->
+
+<!-- load JS files -->
+
+<script src="/static/resource/js/jquery-1.11.3.min.js"></script>
+<!-- jQuery (https://jquery.com/download/) -->
+<script src="/static/resource/js/imagesloaded.pkgd.min.js"></script>
+<!-- https://masonry.desandro.com/ -->
+<script src="/static/resource/js/masonry.pkgd.min.js"></script>
+<!-- https://masonry.desandro.com/ -->
+<script src="/static/js/ios-orientationchange-fix.js"></script>
+<script src="/static/js/my_requests.js"></script>
+<script src="/static/js/photo2.js"></script>
+{% if g.wx_browser %}
+    <script src="/static/js/photo2.wx.js"></script>
+{% else %}
+    <script src="/static/js/jquery.swipebox.js"></script>
+    <script src="/static/js/photo2.win.js"></script>
+{% endif %}
+<!-- Templatemo scripts -->
+<script>
 
 
-        </script>
-    </body>
-    </html>
+</script>
+</body>
+</html>

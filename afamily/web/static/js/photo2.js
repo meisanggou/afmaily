@@ -20,4 +20,20 @@ $(document).ready(function () {
     $grid.imagesLoaded().progress(function () {
         $grid.masonry('layout');
     });
+    $(".star-parent").click(function (event) {
+        $(this).hide();
+        $(this).siblings().show();
+        var album = event.currentTarget.dataset['album'];
+        var name = event.currentTarget.dataset['name'];
+        var star = event.currentTarget.dataset['star'];
+        var data = {'album': album, 'name': name, 'star': star};
+        my_async_request2('/photo/star', 'PUT', data, function(data){
+            console.info(data);
+        });
+    });
+    $(".star-target").each(function () {
+        var children = $(this).children('.star-parent');
+        $(children[0]).show();
+        $(children[1]).hide();
+    });
 });

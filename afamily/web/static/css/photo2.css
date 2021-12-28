@@ -1,0 +1,20 @@
+.display-none {
+    display: none;
+}
+.star-parent {
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 10px;
+    right: 20px;
+}
+
+.star-parent img {
+    width: 20px;
+    height: 20px;
+    z-index: 100;
+}
+
+.star-target {
+    z-index: 50;
+}

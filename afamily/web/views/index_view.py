@@ -1,5 +1,6 @@
 # !/usr/bin/env python
 # coding: utf-8
+from flask import jsonify
 from flask import request
 from flask_helper.template import RenderTemplate
 from flask_helper.view import View
@@ -14,7 +15,7 @@ __author__ = 'zhouhenglc'
 index_view = View('index_view', __name__)
 rt = RenderTemplate()
 PHOTOS = helper.register_photos()
-print(PHOTOS)
+
 
 @index_view.route('/')
 def index():
@@ -46,4 +47,10 @@ def photo():
     url_items = PHOTOS[name]['urls']
     title = PHOTOS[name]['title']
     template = '%s.html' % mapping.get(name, 'photo2')
-    return rt.render(template, img_items=url_items, title=title)
+    return rt.render(template, img_items=url_items, title=title, album_name=name)
+
+
+@index_view.route('/photo/star', methods=['PUT'])
+def star_photo():
+    pass
+    return jsonify({'status': True, 'data': 'success'})

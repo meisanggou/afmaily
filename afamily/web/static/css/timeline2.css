@@ -1,9 +1,3 @@
-.bg-light-slate-gray{ background-color: #778899; }
-.bg-green{ background-color: #008000; }
-.bg-gainsboro { background-color: #DCDCDC; }
-.bg-gold { background-color: #FFD700; }
-.bg-fuchsia { background-color: #FF00FF }
-
 /*¿ËÀ³ÒòÀ¶ ÒøÉ«
  ÖÐ¹úºì Ç§ËêÂÌ
  ÄªÀ¼µÏÉ« µ­·Û
@@ -12,22 +6,91 @@
  ÄÃÆÂÀï»Æ ÖÐ»Ò
  °®ÂíÊË³È Éî¿Õ»Ò
 */
-.bg-klein { background-color: #002EA6; }
-.bg-silver { background-color: #C0C0C0; }
+.bg-klein {
+    background-color: #002EA6;
+}
 
-.bg-red { background-color: #D7000F; }
-.bg-green { background-color: #3C5842; }
+.bg-silver {
+    background-color: #C0C0C0;
+}
 
-.bg-mld { background-color: #798B71; }
-.bg-pink { background-color: #FBE8D9; }
+.bg-silver:hover {
+    background-color: #002EA6;
+    border: none;
+}
 
-.bg-mes { background-color: #01847F; }
-.bg-darkslategray { background-color: #00544D; }
+.bg-red {
+    background-color: #D7000F;
+}
 
-.bg-pls { background-color: #013E77; }
-.bg-light-coffee { background-color: #F9CF9F; }
+.bg-green {
+    background-color: #3C5842;
+}
 
-.bg-npl { background-color: #FCDA5E; }
-.bg-midnight { background-color: #817F80; }
-.bg-ams { background-color: #FF770F; }
-.bg-deep-grey { background-color: #333333; }
+.bg-green:hover {
+    background-color: #D7000F;
+    border: none;
+}
+
+.bg-mld {
+    background-color: #798B71;
+}
+
+.bg-pink {
+    background-color: #FBE8D9;
+}
+.bg-pink:hover {
+    background-color: #798B71;
+    border: none;
+}
+
+.bg-mes {
+    background-color: #01847F;
+}
+
+.bg-darkslategray {
+    background-color: #00544D;
+}
+.bg-darkslategray:hover {
+    background-color: #01847F;
+    border: none;
+}
+.bg-pls {
+    background-color: #013E77;
+}
+
+.bg-light-coffee {
+    background-color: #F9CF9F;
+}
+.bg-light-coffee:hover {
+    background-color: #013E77;
+    border: none;
+}
+.bg-npl {
+    background-color: #FCDA5E;
+}
+
+.bg-midnight {
+    background-color: #817F80;
+}
+.bg-midnight:hover {
+    background-color: #817F80;
+    border: none;
+}
+.bg-ams {
+    background-color: #FF770F;
+    border: none;
+}
+
+.bg-deep-grey {
+    background-color: #333333;
+}
+.bg-deep-grey:hover {
+    background-color: #FF770F;
+    border: none;
+}
+
+.img-min {
+    height: 20px;
+    width: 20px;
+}
