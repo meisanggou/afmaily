@@ -1,15 +1,15 @@
 default:
   album1:
-    title: 领证
+    title: 测试1
     location: d:/demo
     num: 10
   album2:
-    title: 订婚
+    title: 测试2
     location: d:/demo
   album3:
     location: d:/demo
     num: 10
-    title: 拍婚纱照
+    title: 测试3
   album4:
     location: d:/demo
     num: 15

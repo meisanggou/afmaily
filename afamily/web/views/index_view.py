@@ -1,5 +1,6 @@
 # !/usr/bin/env python
 # coding: utf-8
+from flask import g
 from flask import jsonify
 from flask import request
 from flask_helper.template import RenderTemplate
@@ -52,5 +53,5 @@ def photo():
 
 @index_view.route('/photo/star', methods=['PUT'])
 def star_photo():
-    pass
+    print(g.remote_addr)
     return jsonify({'status': True, 'data': 'success'})
